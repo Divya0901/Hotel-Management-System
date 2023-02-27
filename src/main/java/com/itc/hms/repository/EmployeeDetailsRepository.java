@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmployeeDetailsRepository extends JpaRepository<EmployeeDetails, Integer> {
+
+     EmployeeDetails findEmployeeDetailsByEmpMobileNumberAndEmpAadharCardNumber(Long mobileNumber, Long aadharNumber);
 }

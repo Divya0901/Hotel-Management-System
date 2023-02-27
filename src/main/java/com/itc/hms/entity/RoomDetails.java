@@ -13,6 +13,7 @@ public class RoomDetails {
     private Integer roomNumber;
     private String roomCategory;
     private BigDecimal roomPrice;
+    private String roomStatus;
 
     public Integer getRoomNumber() {
         return roomNumber;
@@ -36,5 +37,13 @@ public class RoomDetails {
 
     public void setRoomPrice(BigDecimal roomPrice) {
         this.roomPrice = roomPrice;
+    }
+
+    public String getRoomStatus() {
+        return roomStatus;
+    }
+
+    public void setRoomStatus(String roomStatus) {
+        this.roomStatus = roomStatus;
     }
 }
