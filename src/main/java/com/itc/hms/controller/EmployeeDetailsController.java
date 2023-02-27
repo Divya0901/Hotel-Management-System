@@ -9,12 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Map;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class EmployeeDetailsController {
@@ -42,11 +37,11 @@ public class EmployeeDetailsController {
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 
-    @GetMapping("/getEmployeeDetails")
-    public ResponseEntity<ResponseDTO> getEmployeeDetails(@RequestBody Map<String, Long> request){
+    @GetMapping("/getEmployeeDetails/{mobileNumber}/{aadharNumber}")
+    public ResponseEntity<ResponseDTO> getEmployeeDetails(@PathVariable Long mobileNumber, @PathVariable Long aadharNumber){
         ResponseDTO responseDTO = new ResponseDTO();
         EmployeeDetails employeeDetails;
-        employeeDetails = employeeDetailsService.getEmployeeDetails(request.get("mobileNumber"), request.get("aadharNumber"));
+        employeeDetails = employeeDetailsService.getEmployeeDetails(mobileNumber, aadharNumber);
         responseDTO.setStatus("Success");
         responseDTO.setStatusCode(200);
         responseDTO.setMessage("Data fetched successfully");
