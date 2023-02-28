@@ -1,32 +1,19 @@
-package com.itc.hms.entity;
-
-import jakarta.persistence.*;
+package com.itc.hms.dto;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
-@Entity
-@Table
-public class CustomerDetails {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer customerId;
+public class CustomerDetailsRequestDTO {
     private String fullName;
     private Long phoneNumber;
     private String emailId;
     private String personalIdentityCard;
-    private String personalIdentityCardNumber;
+    private Long personalIdentityCardNumber;
     private String address;
     private Integer familyMemberCount;
-
-    public Integer getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
-    }
+    private String  roomCategory;
+    private Date checkOutDate;
+    private BigDecimal paidAmount;
 
     public String getFullName() {
         return fullName;
@@ -60,11 +47,11 @@ public class CustomerDetails {
         this.personalIdentityCard = personalIdentityCard;
     }
 
-    public String getPersonalIdentityCardNumber() {
+    public Long getPersonalIdentityCardNumber() {
         return personalIdentityCardNumber;
     }
 
-    public void setPersonalIdentityCardNumber(String personalIdentityCardNumber) {
+    public void setPersonalIdentityCardNumber(Long personalIdentityCardNumber) {
         this.personalIdentityCardNumber = personalIdentityCardNumber;
     }
 
@@ -82,5 +69,29 @@ public class CustomerDetails {
 
     public void setFamilyMemberCount(Integer familyMemberCount) {
         this.familyMemberCount = familyMemberCount;
+    }
+
+    public String getRoomCategory() {
+        return roomCategory;
+    }
+
+    public void setRoomCategory(String roomCategory) {
+        this.roomCategory = roomCategory;
+    }
+
+    public Date getCheckOutDate() {
+        return checkOutDate;
+    }
+
+    public void setCheckOutDate(Date checkOutDate) {
+        this.checkOutDate = checkOutDate;
+    }
+
+    public BigDecimal getPaidAmount() {
+        return paidAmount;
+    }
+
+    public void setPaidAmount(BigDecimal paidAmount) {
+        this.paidAmount = paidAmount;
     }
 }

@@ -30,9 +30,11 @@ public class EmployeeDetailsController {
             responseDTO.setMessage("Data saved successfully");
             responseDTO.setData(employeeDetails);
         }
-        responseDTO.setStatus("Failed");
-        responseDTO.setStatusCode(400);
-        responseDTO.setMessage("Please provide the valid MobileNumber and EmailId");
+        else {
+            responseDTO.setStatus("Failed");
+            responseDTO.setStatusCode(400);
+            responseDTO.setMessage("Please provide the valid MobileNumber and EmailId");
+        }
 
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }

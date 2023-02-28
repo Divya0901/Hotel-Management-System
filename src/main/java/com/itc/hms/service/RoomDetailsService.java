@@ -25,9 +25,8 @@ public class RoomDetailsService {
         return roomDetailsRepository.save(roomDetails);
     }
 
-    public RoomDetails getRoomDetails(String category){
-        RoomDetails roomDetails;
-        roomDetails = roomDetailsRepository.findRoomDetailsByRoomCategory(category);
+    public List<RoomDetails> getRoomDetails(String category){
+        List<RoomDetails> roomDetails = roomDetailsRepository.findRoomDetailsByRoomCategory(category);
         return roomDetails;
     }
 }

@@ -34,7 +34,7 @@ public class RoomDetailsController {
     @GetMapping("/getRoomDetails/{category}")
     public ResponseEntity<ResponseDTO> getRoomDetails(@PathVariable String category){
         ResponseDTO responseDTO = new ResponseDTO();
-        RoomDetails roomDetails;
+        List<RoomDetails> roomDetails;
         roomDetails = roomDetailsService.getRoomDetails(category);
         responseDTO.setStatus("Success");
         responseDTO.setStatusCode(200);
